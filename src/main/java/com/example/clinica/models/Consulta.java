@@ -11,7 +11,6 @@ public class Consulta {
     @OneToOne
     private Atendente atendente;
     @OneToOne
-
     private Medico medico;
     @OneToOne
     private Paciente paciente;
