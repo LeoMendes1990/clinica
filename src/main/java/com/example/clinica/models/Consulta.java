@@ -3,7 +3,7 @@ package com.example.clinica.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "TB_CONSULTA")
+
 public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
