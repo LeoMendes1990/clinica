@@ -12,9 +12,9 @@ public class TestProfile {
     @Autowired
     private DBServices dbServices;
 
-
-    public void instanciaDB(){
-    this.dbServices.instaciaDB();
-}
+    @Bean
+    public void instanciaDB() {
+        this.dbServices.instanciaDB();
+    }
 
 }
