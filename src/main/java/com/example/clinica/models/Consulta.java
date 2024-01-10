@@ -8,10 +8,12 @@ public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @OneToOne
     private Atendente atendente;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "TB_MEDICO_ID")
     private Medico medico;
+    @OneToOne
     private Paciente paciente;
 
 
