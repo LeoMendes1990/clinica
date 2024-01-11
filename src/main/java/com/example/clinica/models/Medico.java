@@ -1,5 +1,6 @@
 package com.example.clinica.models;
 
+import com.example.clinica.enums.Especialidade;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,16 +13,17 @@ public class Medico {
     private Integer id;
     private String nome;
     private String crm;
+    private Especialidade especialidade;
 
 
     public Medico() {
     }
 
-    public Medico(Integer id, String nome, String crm) {
+    public Medico(Integer id, String nome, String crm, Especialidade especialidade) {
         this.id = id;
         this.nome = nome;
         this.crm = crm;
-
+        this.especialidade = especialidade;
     }
 
     public Integer getId() {
@@ -48,5 +50,11 @@ public class Medico {
         this.crm = crm;
     }
 
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
 
+    public void setEspecialidade(Especialidade especialidade) {
+        this.especialidade = especialidade;
+    }
 }

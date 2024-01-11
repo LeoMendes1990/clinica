@@ -1,6 +1,11 @@
 package com.example.clinica.models;
 
+import com.example.clinica.enums.Especialidade;
+import com.example.clinica.enums.StatusConsulta;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 
@@ -15,15 +20,22 @@ public class Consulta {
     @OneToOne
     private Paciente paciente;
 
+    @JsonFormat(pattern = "HH:mm - dd/MM/yyyy")
+    private LocalDateTime dateTime;
+
+    private StatusConsulta statusConsulta;
+
 
     public Consulta() {
     }
 
-    public Consulta(Integer id, Atendente atendente, Medico medico, Paciente paciente) {
+    public Consulta(Integer id, Atendente atendente, Medico medico, Paciente paciente, LocalDateTime dateTime, StatusConsulta statusConsulta) {
         this.id = id;
         this.atendente = atendente;
         this.medico = medico;
         this.paciente = paciente;
+        this.dateTime = dateTime;
+        this.statusConsulta = statusConsulta;
     }
 
     public Integer getId() {
@@ -56,5 +68,21 @@ public class Consulta {
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
+    }
+
+    public StatusConsulta getStatusConsulta() {
+        return statusConsulta;
+    }
+
+    public void setStatusConsulta(StatusConsulta statusConsulta) {
+        this.statusConsulta = statusConsulta;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 }
