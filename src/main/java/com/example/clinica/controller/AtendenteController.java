@@ -1,5 +1,7 @@
 package com.example.clinica.controller;
 
+import com.example.clinica.configs.ModelMapperConfig;
+import com.example.clinica.dtos.AtendenteDTO;
 import com.example.clinica.models.Atendente;
 import com.example.clinica.services.AtendenteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ import java.util.List;
 public class AtendenteController {
     @Autowired
     private AtendenteService atendenteService;
+    @Autowired
+    private ModelMapperConfig modelMapper;
 
     @GetMapping
     public List<Atendente> findall() {
@@ -20,8 +24,9 @@ public class AtendenteController {
     }
 
     @GetMapping(value = "/{id}")
-    public Atendente findById(@PathVariable Integer id) {
-        return atendenteService.findById(id);
+    public ResponseEntity<AtendenteDTO> findById(@PathVariable Integer id) {
+        Atendente ate = atendenteService.findById(id);
+        return ResponseEntity.o
     }
 
     @PostMapping

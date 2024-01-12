@@ -21,7 +21,7 @@ public class Consulta {
     private Paciente paciente;
 
     @JsonFormat(pattern = "HH:mm - dd/MM/yyyy")
-    private LocalDateTime dateTime;
+    private LocalDateTime data_Atendimento;
 
     private StatusConsulta statusConsulta;
 
@@ -29,12 +29,12 @@ public class Consulta {
     public Consulta() {
     }
 
-    public Consulta(Integer id, Atendente atendente, Medico medico, Paciente paciente, LocalDateTime dateTime, StatusConsulta statusConsulta) {
+    public Consulta(Integer id, Atendente atendente, Medico medico, Paciente paciente, LocalDateTime data_Atendimento, StatusConsulta statusConsulta) {
         this.id = id;
         this.atendente = atendente;
         this.medico = medico;
         this.paciente = paciente;
-        this.dateTime = dateTime;
+        this.data_Atendimento = data_Atendimento;
         this.statusConsulta = statusConsulta;
     }
 
@@ -79,10 +79,10 @@ public class Consulta {
     }
 
     public LocalDateTime getDateTime() {
-        return dateTime;
+        return data_Atendimento;
     }
 
     public void setDateTime(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
+        this.data_Atendimento = data_Atendimento;
     }
 }
