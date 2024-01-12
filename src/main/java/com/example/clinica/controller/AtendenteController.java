@@ -26,7 +26,7 @@ public class AtendenteController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<AtendenteDTO> findById(@PathVariable Integer id) {
         Atendente ate = atendenteService.findById(id);
-        return ResponseEntity.o
+        return ResponseEntity.ok().body(modelMapper.)
     }
 
     @PostMapping
